@@ -37,7 +37,8 @@ import {
   unstable_setDisableYieldValue,
 } from './Scheduler';
 
-declare const __REACT_DEVTOOLS_GLOBAL_HOOK__: Object | void;
+const __REACT_DEVTOOLS_GLOBAL_HOOK__ = {};
+// declare const __REACT_DEVTOOLS_GLOBAL_HOOK__: Object | void;
 
 let rendererID = null;
 let injectedHook = null;
@@ -61,11 +62,11 @@ export function injectInternals(internals: Object): boolean {
   }
   if (!hook.supportsFiber) {
     if (__DEV__) {
-      console.error(
-        'The installed version of React DevTools is too old and will not work ' +
-          'with the current version of React. Please update React DevTools. ' +
-          'https://react.dev/link/react-devtools',
-      );
+      // console.error(
+      //   'The installed version of React DevTools is too old and will not work ' +
+      //     'with the current version of React. Please update React DevTools. ' +
+      //     'https://react.dev/link/react-devtools',
+      // );
     }
     // DevTools exists, even though it doesn't support Fiber.
     return true;
