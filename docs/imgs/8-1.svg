@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="600" viewBox="0 0 500 600">
+  <!-- 背景 -->
+  <rect width="500" height="600" fill="white" />
+  
+  <!-- 边框 -->
+  <rect x="10" y="10" width="480" height="580" fill="white" stroke="black" stroke-width="2" />
+  
+  <!-- 开始节点 -->
+  <rect x="175" y="50" width="150" height="50" rx="20" ry="20" fill="white" stroke="black" stroke-width="2" />
+  <text x="250" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">任务进入执行栈</text>
+  
+  <!-- 箭头1 -->
+  <line x1="250" y1="100" x2="250" y2="130" stroke="black" stroke-width="2" />
+  <polygon points="250,140 245,130 255,130" fill="black" />
+  
+  <!-- 判断节点 -->
+  <polygon points="250,140 300,180 250,220 200,180" fill="white" stroke="black" stroke-width="2" />
+  <text x="250" y="185" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">同步 or 异步</text>
+  
+  <!-- 同步路径 -->
+  <line x1="200" y1="180" x2="150" y2="180" stroke="black" stroke-width="2" />
+  <line x1="150" y1="180" x2="150" y2="250" stroke="black" stroke-width="2" />
+  <polygon points="150,260 145,250 155,250" fill="black" />
+  <text x="130" y="210" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">同步</text>
+  
+  <!-- 异步路径 -->
+  <line x1="300" y1="180" x2="350" y2="180" stroke="black" stroke-width="2" />
+  <line x1="350" y1="180" x2="350" y2="250" stroke="black" stroke-width="2" />
+  <polygon points="350,260 345,250 355,250" fill="black" />
+  <text x="370" y="210" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">异步</text>
+  
+  <!-- 主线程节点 -->
+  <rect x="100" y="260" width="100" height="50" fill="white" stroke="black" stroke-width="2" />
+  <text x="150" y="290" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">主线程</text>
+  
+  <!-- 挂起节点 -->
+  <rect x="300" y="260" width="100" height="50" fill="white" stroke="black" stroke-width="2" />
+  <text x="350" y="290" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">挂起</text>
+  
+  <!-- 主线程到任务执行完毕 -->
+  <line x1="150" y1="310" x2="150" y2="350" stroke="black" stroke-width="2" />
+  <polygon points="150,360 145,350 155,350" fill="black" />
+  
+  <!-- 挂起到任务队列 -->
+  <line x1="350" y1="310" x2="350" y2="350" stroke="black" stroke-width="2" />
+  <polygon points="350,360 345,350 355,350" fill="black" />
+  <text x="390" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">有返回值</text>
+  
+  <!-- 任务执行完毕节点 -->
+  <rect x="100" y="360" width="100" height="50" fill="white" stroke="black" stroke-width="2" />
+  <text x="150" y="390" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">任务执行完毕</text>
+  
+  <!-- 任务队列节点 -->
+  <rect x="300" y="360" width="100" height="50" fill="white" stroke="black" stroke-width="2" />
+  <text x="350" y="390" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">任务队列</text>
+  
+  <!-- 任务队列循环 -->
+  <path d="M 400 385 C 430 385, 430 435, 400 435" stroke="black" stroke-width="2" fill="none" />
+  <line x1="400" y1="435" x2="350" y2="435" stroke="black" stroke-width="2" />
+  <polygon points="350,435 360,430 360,440" fill="black" />
+  <text x="440" y="410" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">不断读取</text>
+  
+  <!-- 最终节点连接线 -->
+  <line x1="150" y1="410" x2="150" y2="460" stroke="black" stroke-width="2" />
+  <line x1="350" y1="410" x2="350" y2="460" stroke="black" stroke-width="2" />
+  <line x1="150" y1="460" x2="250" y2="460" stroke="black" stroke-width="2" />
+  <line x1="350" y1="460" x2="250" y2="460" stroke="black" stroke-width="2" />
+  <line x1="250" y1="460" x2="250" y2="490" stroke="black" stroke-width="2" />
+  <polygon points="250,500 245,490 255,490" fill="black" />
+  
+  <!-- 最终节点 -->
+  <rect x="100" y="500" width="300" height="50" fill="white" stroke="black" stroke-width="2" />
+  <text x="250" y="530" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">读取任务队列中结果，进入主线程</text>
+</svg>
